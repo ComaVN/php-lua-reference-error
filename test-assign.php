@@ -9,7 +9,11 @@ $plain_arr = [
 $referenced_arr = [
     'a' => 'b',
 ];
+// without this line it works:
 $ref = &$referenced_arr['a'];
+
+// adding this line removes the & from the string in the var_dump, but it still fails:
+//unset($ref);
 
 echo "Plain array:\n";
 var_dump($plain_arr);
